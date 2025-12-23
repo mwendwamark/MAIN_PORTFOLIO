@@ -1,0 +1,206 @@
+/* pre title text */
+.pre_title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pre_title_icon {
+  height: 15px;
+  width: 15px;
+  border-radius: 3px;
+  background-color: var(--sec_color);
+  flex-shrink: 0;
+}
+
+.pre_title_text {
+  font-size: var(--pre_title_fs);
+  font-weight: var(--fw_medium);
+  font-family: var(--questrial);
+  color: var(--white_color);
+  text-transform: capitalize;
+  letter-spacing: 0.6px;
+}
+
+.custom_action_btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 24px 6px 8px; /* Extra padding on left for the circle */
+  background-color: var(--white_color); /* Off-white background */
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  min-width: 180px;
+  /* height: 54px; */
+  z-index: 1;
+}
+
+/* The expanding red background */
+.custom_action_btn::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  width: 30px; /* Matches the icon circle size */
+  height: 30px;
+  background-color: var(--sec_color); /* The specific red from your images */
+  border-radius: 50%;
+  color: var(--white_color);
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.icon_circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+}
+
+.icon_circle i {
+  color: var(--white_color);
+}
+
+.btn_label {
+  flex-grow: 1;
+  text-align: center;
+  font-size: var(--button_fs);
+  font-weight: var(--fw_medium);
+  color: var(--bg_color);
+  margin-left: 8px;
+  z-index: 2;
+  transition: color 0.4s ease;
+}
+
+/* Hover Effects */
+.custom_action_btn:hover::before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 100px; /* Matches button shape on fill */
+}
+
+.custom_action_btn:hover .btn_label {
+  color: var(--white_color); /* Flips text to white as the red fills */
+}
+
+.custom_action_btn:active {
+  transform: scale(0.96);
+}
+
+.sec_custom_action_btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 24px 6px 8px;
+  background-color: var(--sec_color);
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  min-width: 180px;
+  z-index: 1;
+}
+
+.sec_custom_action_btn::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--white_color);
+  border-radius: 50%;
+  color: var(--sec_color);
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sec_icon_circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+}
+
+.sec_icon_circle i {
+  color: var(--bg_color);
+}
+
+.sec_btn_label {
+  flex-grow: 1;
+  text-align: center;
+  font-size: var(--button_fs);
+  font-weight: var(--fw_medium);
+  color: var(--white_color);
+  margin-left: 8px;
+  z-index: 2;
+  transition: color 0.4s ease;
+}
+
+.sec_custom_action_btn:hover::before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 100px; /* Matches button shape on fill */
+  }
+
+.sec_custom_action_btn:hover .sec_btn_label,
+.sec_custom_action_btn:hover .sec_icon_circle i {
+    color: var(--sec_color); /* Flips text to white as the red fills */
+  }
+
+/* ========== Custom Cursor & Trail ========== */
+.custom_cursor {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  background-color: var(--sec_color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease;
+}
+
+
+.cursor_trail {
+  position: fixed;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(
+    circle,
+    rgba(156, 0, 11, 0.8) 0%,
+    rgba(156, 0, 11, 0.3) 10%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-10%, -10%);
+  filter: blur(2px);
+}
+
+/* Hide default cursor globally */
+* {
+  cursor: none !important;
+}
+
+/* Show default cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+  .custom_cursor,
+  .cursor_trail {
+    display: none;
+  }
+}
