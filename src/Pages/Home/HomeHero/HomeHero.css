@@ -1,0 +1,315 @@
+.home_hero_wrapper {
+  width: 100%;
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  /* padding-top: 80px; Space for fixed navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 2x2 Grid Layout */
+.home_hero_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 94%;
+  height: 85vh;
+  position: relative;
+  /* border: 1px solid rgba(255, 255, 255, 0.1); Removed outer border */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.home_hero_cell {
+  position: relative;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid rgba(255, 255, 255, 0.35); Removed generic border */
+}
+
+.home_hero_cell:nth-child(2),
+.home_hero_cell:nth-child(4) {
+  padding: 3rem;
+}
+
+.home_hero_names {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+}
+
+/* Center Crosshair */
+.home_hero_plus_icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  pointer-events: none;
+  font-weight: 900;
+}
+
+.plus_line_v {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: var(--white_color);
+  transform: translateX(-50%);
+}
+
+.plus_line_h {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--white_color);
+  transform: translateY(-50%);
+}
+
+/* Top Left: Name & Quote */
+.home_hero_tl {
+  align-items: flex-start;
+  justify-content: space-between;
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.hero_name {
+  font-family: var(--didact_gothic);
+  font-size: var(--hero_fs);
+  font-weight: var(--fw_bold);
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--peach_color);
+  margin-bottom: 2rem;
+}
+
+.hero_quote_block {
+  font-size: 8rem;
+  color: var(--sec_color);
+  line-height: 0;
+  /* margin-top: auto; */
+}
+
+/* Top Right: Tagline */
+.home_hero_tr {
+  align-items: flex-start;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.hero_tagline {
+  font-family: var(--didact_gothic);
+  font-size: var(--sub_section_fs);
+  font-weight: var(--fw_medium);
+  line-height: 1.2;
+  color: var(--grey_color);
+}
+
+.highlight_text {
+  font-family: var(--questrial);
+  color: var(--peach_color);
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+}
+
+/* Bottom Left: Bio & Scroll */
+.home_hero_bl {
+  justify-content: space-between;
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.hero_bio {
+  font-family: var(--questrial);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--grey_color);
+  max-width: 60%;
+}
+
+.scroll_indicator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 10rem;
+}
+
+.scroll_line {
+  width: 2px;
+  height: 40px;
+  background-color: var(--sec_color);
+}
+
+.scroll_indicator span {
+  font-family: var(--questrial);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--grey_color);
+  text-transform: uppercase;
+}
+
+/* Bottom Right: Image Grid & Flashlight Effect */
+.home_hero_br {
+  padding: 0; /* Full bleed for images */
+  overflow: hidden;
+  position: relative;
+}
+
+.project_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.project_img_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project_img_wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.4) blur(1px);
+  transition: all 0.5s ease;
+}
+
+/* Flashlight Overlay Logic */
+.home_hero_br::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  background: radial-gradient(
+    circle 150px at var(--cursor-x) var(--cursor-y),
+    transparent 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.home_hero_br:hover::before {
+  opacity: 1;
+}
+
+.project_img_wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.project_img_wrapper img {
+  filter: grayscale(70%); /* Base state is grayscale */
+}
+
+.project_img_wrapper.revealed img {
+  filter: grayscale(30%) brightness(1);
+}
+
+.home_hero_br::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15); /* Dark overlay */
+  z-index: 2;
+  pointer-events: none;
+  mask-image: radial-gradient(
+    circle 120px at var(--cursor-x) var(--cursor-y),
+    transparent 0%,
+    black 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle 120px at var(--cursor-x) var(--cursor-y),
+    transparent 0%,
+    black 100%
+  );
+}
+
+/* Click Hint */
+.click_hint {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: var(--white_color);
+  z-index: 3;
+  opacity: 0.5;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .hero_bio {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .home_hero_grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 400px;
+    height: auto;
+  }
+
+  .home_hero_plus_icon {
+    display: none; /* Hide crosshair on mobile stack */
+  }
+
+  /* Reset and adjust borders for mobile stack */
+  .home_hero_tl,
+  .home_hero_tr,
+  .home_hero_bl {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  }
+
+  .home_hero_cell {
+    padding: 2rem;
+    border: none;
+  }
+
+  .hero_name {
+    font-size: 3rem;
+  }
+
+  .hero_quote_block {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home_hero_cell {
+    padding: 1rem 0 !important;
+  }
+
+  .hero_bio{
+    max-width: 100%;
+    font-size: var(--text_fs);
+  }
+}

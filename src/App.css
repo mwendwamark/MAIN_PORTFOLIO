@@ -62,7 +62,7 @@ button {
 }
 
 .container {
-  max-width: 94%;
+  max-width: 90%;
   margin: 0 auto;
   overflow-x: hidden;
   width: 100%;
@@ -76,18 +76,30 @@ button {
   padding: 10rem 0 10rem 0;
 }
 
-.section_title{
+.section_title {
   font-size: var(--section_fs);
-  font-weight:var(--fw_bold) ;
+  font-weight: var(--fw_bold);
   letter-spacing: 0.5px;
   color: var(--peach_color);
   text-transform: uppercase;
 }
 
-.sub_section_title{
+.sub_section_title {
   font-size: var(--pre_title_fs);
-  font-weight:var(--fw_normal) ;
+  font-weight: var(--fw_normal);
   letter-spacing: 0.4px;
   color: var(--grey_color);
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --hero_fs: 3.5rem;
+    --section_fs: 2.5rem;
+    --sub_section_fs: 2rem;
+    --pre_title_fs: 1rem;
+    --button_fs: 0.875rem;
+    --text_fs: 1rem;
+    --link_fs: 0.9375rem;
+  }
 }
