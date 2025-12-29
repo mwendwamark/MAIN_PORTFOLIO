@@ -1,0 +1,121 @@
+.main_navbar {
+  width: 100%;
+  display: flex;
+  border-top: 0.5rem solid var(--orange_color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+  padding: 1rem 0;
+}
+
+.main_navbar_hidden {
+  transform: translateY(-100%);
+}
+
+.scroll_navbar {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 0; /* Slightly smaller padding on scroll */
+}
+
+.main_navbar_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.main_navbar_logo {
+  font-weight: var(--bold_fw);
+  font-size: clamp(1.3rem, 1.125rem + 1.43vw, 1.5rem);
+  letter-spacing: -1px;
+  z-index: 1001; /* Ensure logo stays above mobile menu background if needed */
+}
+
+.main_navbar_logo a {
+  color: var(--orange_color);
+}
+
+.main_navbar_logo a span {
+  height: 0.5rem;
+  width: 0.5rem;
+  display: inline-block;
+  background-color: var(--orange_color);
+  border-radius: 50%;
+  margin-left: 0.2rem;
+}
+
+.main_navbar_links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.main_navbar_links a {
+  color: var(--black_color);
+  font-weight: var(--normal_fw);
+  letter-spacing: -0.5px;
+  font-size: var(--nav_fs);
+  transition: color 0.3s ease;
+}
+
+.main_navbar_links a.active,
+.main_navbar_links a:hover {
+  color: var(--orange_color);
+}
+
+.main_navbar_menu-icon {
+  cursor: pointer;
+  display: none;
+  z-index: 1001;
+  color: var(--black_color);
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .main_navbar_menu-icon {
+    display: block;
+  }
+
+  .main_navbar_links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-color: var(--orange_color);
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+    gap: 1rem;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Smooth ease-out */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid var(--orange_color);
+  }
+
+  .main_navbar_links.active {
+    transform: translateY(0);
+  }
+
+  .main_navbar_link a {
+    font-size: 1rem; /* Larger font for mobile */
+    color: var(--bg_color);
+  }
+}
+
+/* Small screens */
+@media screen and (max-width: 320px) {
+  .main_navbar_logo {
+    font-size: 1.2rem;
+  }
+
+  .main_navbar_link a {
+    font-size: 1rem;
+  }
+}
