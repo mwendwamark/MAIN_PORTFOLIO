@@ -24,8 +24,8 @@
 /* Overlay Mode (Home Page Initial State) */
 .navbar_overlay {
   background-color: transparent;
-  border-top: none; /* Remove orange border in overlay mode if desired, or keep it */
-  border-top: 0.5rem solid var(--orange_color); /* Keep it consistent with design if needed, or remove */
+  border-top: none;
+  border-top: 0.5rem solid var(--orange_color);
 }
 
 .navbar_overlay .main_navbar_links a {
@@ -115,16 +115,17 @@
     top: 0;
     right: 0;
     width: 60%;
-    height: 100%;
+    height: 100vh; /* Use vh for full viewport height */
     background-color: var(--orange_color);
     flex-direction: column;
     justify-content: center;
     padding-left: 2rem;
     gap: 1rem;
     transform: translateY(-100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Smooth ease-out */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-bottom: 2px solid var(--orange_color);
+    z-index: 1000; /* Ensure it has z-index */
   }
 
   .main_navbar_links.active {
@@ -132,7 +133,7 @@
   }
 
   .main_navbar_link a {
-    font-size: 1rem; /* Larger font for mobile */
+    font-size: 1rem;
     color: var(--bg_color);
   }
 
