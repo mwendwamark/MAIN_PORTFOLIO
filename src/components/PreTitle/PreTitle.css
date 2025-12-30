@@ -1,0 +1,18 @@
+.pre_title_text {
+  font-size: 1.125rem;
+  text-transform: capitalize;
+  color: var(--black_color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: var(--bold_fw);
+}
+
+.pre_title_text::before {
+  content: "";
+  width: 20px;
+  height: 12px;
+  background-color: var(--orange_color);
+  border-radius: 3px;
+  display: inline-block;
+}

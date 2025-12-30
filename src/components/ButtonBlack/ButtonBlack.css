@@ -1,0 +1,63 @@
+.btn_black {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 20px;
+  border: 2px solid var(--black_color);
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: var(--normal_fw);
+  font-size: var(--nav_fs);
+  transition: 0.3s;
+  background-color: var(--black_color);
+  cursor: pointer;
+  border-radius: 500px;
+}
+
+.btn_black::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 6px);
+  height: calc(100% + 2px);
+  background-color: transparent;
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+}
+
+.btn_black::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 50px);
+  background-color: transparent; /* Transparent because base is black */
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+}
+
+.btn_black:hover::before {
+  transform: translateY(-25px);
+  height: 0;
+}
+
+.btn_black:hover::after {
+  transform: scaleX(0);
+  transition-delay: 0.15s;
+}
+
+.btn_black:hover {
+  border: 2px solid var(--black_color);
+  background-color: transparent;
+  color: var(--black_color);
+}
+
+.btn_black .spn_black {
+  position: relative;
+  z-index: 3;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}

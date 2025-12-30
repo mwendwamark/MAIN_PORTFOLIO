@@ -19,7 +19,7 @@ const CTA = () => {
             </p>
 
             <div className="CTA_button_wrapper">
-              <ButtonPri text="Contact Now" />
+              <ButtonPri text="Contact Now" to="/contact" />
             </div>
           </div>
           <div className="CTA_section_cr">

@@ -1,0 +1,63 @@
+.btn_orange {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 20px;
+  border: 2px solid var(--orange_color);
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: var(--normal_fw);
+  font-size: var(--nav_fs);
+  transition: 0.3s;
+  background-color: var(--orange_color);
+  cursor: pointer;
+  border-radius: 500px;
+}
+
+.btn_orange::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 6px);
+  height: calc(100% + 2px);
+  background-color: transparent;
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+}
+
+.btn_orange::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 50px);
+  background-color: transparent;
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+}
+
+.btn_orange:hover::before {
+  transform: translateY(-25px);
+  height: 0;
+}
+
+.btn_orange:hover::after {
+  transform: scaleX(0);
+  transition-delay: 0.15s;
+}
+
+.btn_orange:hover {
+  border: 2px solid var(--orange_color);
+  background-color: transparent;
+  color: var(--orange_color);
+}
+
+.btn_orange .spn_orange {
+  position: relative;
+  z-index: 3;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}

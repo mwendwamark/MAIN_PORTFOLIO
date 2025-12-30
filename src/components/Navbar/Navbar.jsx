@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { List, X } from "@phosphor-icons/react";
 import ButtonPri from "../ButtonPri/ButtonPri";
+import ButtonWhiteOutline from "../ButtonWhiteOutline/ButtonWhiteOutline";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,13 +53,13 @@ const Navbar = () => {
     <header
       className={`main_navbar ${scrolled ? "scroll_navbar" : ""} ${
         !visible ? "main_navbar_hidden" : ""
-      }`}
+      } ${isHome && !scrolled ? "navbar_overlay" : ""}`}
     >
       <nav className="container main_navbar_container">
         <div className="main_navbar_logo">
           <NavLink to="/">
             {" "}
-            Mwendwa<span></span>
+            Nthei<span></span>
           </NavLink>
         </div>
 
@@ -78,8 +81,8 @@ const Navbar = () => {
           </li>
 
           <li className="main_navbar_link">
-            <ButtonPri text={"Get in Touch"}/>
-          </li>
+            <ButtonWhiteOutline text={"Get in Touch"} to="/contact" />
+          </li> 
         </ul>
 
         <div className="main_navbar_menu-icon" onClick={toggleMenu}>

@@ -21,6 +21,30 @@
   padding: 0.8rem 0; /* Slightly smaller padding on scroll */
 }
 
+/* Overlay Mode (Home Page Initial State) */
+.navbar_overlay {
+  background-color: transparent;
+  border-top: none; /* Remove orange border in overlay mode if desired, or keep it */
+  border-top: 0.5rem solid var(--orange_color); /* Keep it consistent with design if needed, or remove */
+}
+
+.navbar_overlay .main_navbar_links a {
+  color: #ffffff;
+}
+
+.navbar_overlay .main_navbar_links a:hover,
+.navbar_overlay .main_navbar_links a.active {
+  color: var(--orange_color);
+}
+
+/* Ensure logo text is white in overlay mode if not using an image */
+.navbar_overlay .main_navbar_logo a {
+  color: #ffffff;
+}
+.navbar_overlay .main_navbar_logo a span {
+  background-color: var(--orange_color);
+}
+
 .main_navbar_container {
   display: flex;
   justify-content: space-between;
@@ -76,6 +100,10 @@
   color: var(--black_color);
 }
 
+.navbar_overlay .main_navbar_menu-icon {
+  color: #ffffff;
+}
+
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
   .main_navbar_menu-icon {
@@ -105,6 +133,11 @@
 
   .main_navbar_link a {
     font-size: 1rem; /* Larger font for mobile */
+    color: var(--bg_color);
+  }
+
+  /* Reset colors for mobile menu links even in overlay mode */
+  .navbar_overlay .main_navbar_links a {
     color: var(--bg_color);
   }
 }

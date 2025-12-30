@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CTA from "./components/CTA/CTA";
 import BackgroundShapesLeft from "./components/BackgroundShapes/BackgroundShapesLeft";
 import BackgroundShapesRight from "./components/BackgroundShapes/BackgroundShapesRight";
+import Home from "./pages/Home/Home";
 
 const App = () => {
   return (
@@ -14,9 +15,11 @@ const App = () => {
       >
         {/* <BackgroundShapesLeft /> */}
         <Navbar />
-        <Routes></Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
         {/* <CTA /> */}
-        <BackgroundShapesRight />
+        {/* <BackgroundShapesRight /> */}
       </div>
     </BrowserRouter>
   );
