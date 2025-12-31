@@ -60,6 +60,8 @@
 .home_intro_content_details_right p {
   font-size: var(--text_fs);
   color: var(--text_color);
+  font-weight: var(--normal_fw);
+  line-height: 1.6;
 }
 
 @media screen and (max-width: 1000px) {

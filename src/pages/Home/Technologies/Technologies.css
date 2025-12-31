@@ -1,0 +1,155 @@
+.home_tech_section {
+  overflow: hidden;
+}
+
+.home_tech_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4.5rem;
+}
+
+.home_tech_contents {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  gap: 2rem;
+}
+
+.home_tech_headers h2 {
+  font-size: var(--section_title_fs);
+  font-weight: var(--semi_bold_fw);
+  letter-spacing: -2px;
+}
+
+.home_tech_desc {
+  font-size: var(--text_fs);
+  color: var(--text_color);
+  font-weight: var(--normal_fw);
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+.home_tech_marquee {
+  border-top: 1px solid var(--light_grey_color);
+  border-bottom: 1px solid var(--light_grey_color);
+}
+
+.tech_card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-right: 1px solid var(--light_grey_color);
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.tech_card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.tech_icon svg {
+  width: 60px;
+  height: 60px;
+  fill: var(--black_color);
+  transition: fill 0.3s ease;
+}
+
+.tech_card:hover .tech_icon svg {
+  fill: var(--orange_color);
+}
+
+/* ============================================ */
+/* RESPONSIVE BREAKPOINTS */
+/* ============================================ */
+
+/* Tablet and up (768px) */
+@media screen and (min-width: 768px) {
+  .home_tech_contents {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .home_tech_desc {
+    max-width: 100%;
+  }
+}
+
+/* Desktop and up (1024px) */
+@media screen and (min-width: 1024px) {
+  .home_tech_contents {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .home_tech_desc {
+    max-width: 90%;
+    margin-left: auto;
+  }
+}
+
+/* Large Desktop (1440px) */
+@media screen and (min-width: 1440px) {
+  .home_tech_contents {
+    grid-template-columns: 0.6fr 1.4fr;
+    gap: 6rem;
+  }
+
+  .home_tech_desc {
+    max-width: 75%;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  }
+
+  .tech_card {
+    width: 160px;
+    height: 160px;
+  }
+
+  .tech_icon svg {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Extra Large Desktop (1920px+) */
+@media screen and (min-width: 1920px) {
+  .home_tech_contents {
+    grid-template-columns: 0.5fr 1.5fr;
+    gap: 8rem;
+  }
+
+  .home_tech_desc {
+    max-width: 65%;
+  }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 767px) {
+  .home_tech_container {
+    gap: 3rem;
+  }
+
+  .home_tech_contents {
+    gap: 1.5rem;
+  }
+
+  .tech_card {
+    width: 120px;
+    height: 120px;
+    padding: 2rem;
+  }
+
+  .tech_icon svg {
+    width: 50px;
+    height: 50px;
+  }
+}
