@@ -10,8 +10,8 @@ const CTA = () => {
         <div className="CTA_section_contents">
           <div className="CTA_section_cl">
             <h2 className="CTA_section_header">Stay connected</h2>
-            <a href="mailto:ntheimk@gmail.com" className="CTA_section_email">
-              ntheimk@gmail.com
+            <a href="mailto:devnthe@gmail.com" className="CTA_section_email">
+              devnthei@gmail.com
             </a>
             <p className="CTA_section_text">
               Crafted with creativity and passion. Let's stay connected reach

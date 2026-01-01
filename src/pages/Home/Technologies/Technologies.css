@@ -59,7 +59,7 @@
 .tech_icon svg {
   width: 60px;
   height: 60px;
-  fill: var(--black_color);
+  fill: var(--text_color);
   transition: fill 0.3s ease;
 }
 

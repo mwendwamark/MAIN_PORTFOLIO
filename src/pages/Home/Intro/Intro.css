@@ -28,6 +28,12 @@
   color: var(--black_color);
 }
 
+.home_intro_title strong {
+  color: var(--text_color);
+  font-weight: var(--bold_fw);
+  font-style: italic;
+}
+
 .home_intro_title span {
   margin-left: 100px;
 }

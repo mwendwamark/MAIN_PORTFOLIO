@@ -3,6 +3,7 @@ import Hero from './Hero/Hero'
 import CTA from '../../components/CTA/CTA'
 import Intro from './Intro/Intro'
 import Technologies from "./Technologies/Technologies";
+import ContactsForm from '../Contacts/ContactsForm/ContactsForm';
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero />
       <Intro />
       <Technologies />
+      <ContactsForm/>
       <CTA />
     </div>
   );

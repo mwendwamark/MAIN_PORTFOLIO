@@ -14,11 +14,11 @@ const Intro = () => {
 
         <div className="home_intro_contents">
           <h2 className="home_intro_title">
-            <span> </span> A fullstack developer driven by empathy,
-            curiosity, and purpose. I craft experiences that don’t just look
-            good — they solve real problems. From apps to websites, my goal is
-            to make products feel natural, intuitive, and truly impactful in
-            people’s lives.
+            <span> </span>Fullstack developer with a simple belief:{" "}
+            <strong> "technology should make life easier, not harder"</strong>.
+            I build complete applications—backend systems that power them and
+            frontend experiences that people understand instantly. Every project
+            is a chance to turn complexity into clarity.
           </h2>
           <div>
             <ButtonOrange text={"Get In Touch"} />

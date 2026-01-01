@@ -6,7 +6,7 @@
   --orange_color: #ff462e;
   --black_color: #1e1e1e;
   --text_color: #7f7f80;
-  --light_grey_color: rgb(209, 209, 209);
+  --light_grey_color: rgb(238, 238, 238);
 
   /* FONTS */
   /* FONTS - Fluid Typography using clamp(min, preferred, max) */
@@ -87,6 +87,7 @@ button {
 
 .section {
   padding: 15rem 0;
+  border-top: 1px solid var(--light_grey_color);
 }
 
 .hero_title {
@@ -114,5 +115,11 @@ button {
     margin: 0 auto;
     overflow-x: hidden;
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: 10rem 0;
   }
 }
