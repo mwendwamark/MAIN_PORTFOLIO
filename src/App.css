@@ -104,6 +104,18 @@ button {
   font-weight: var(--medium_fw);
 }
 
+.shared_header_title {
+  font-size: var(--section_title_fs);
+  font-weight: var(--semi_bold_fw);
+  letter-spacing: -3px;
+}
+
+.shared_header_desc {
+  font-size: var(--text_fs);
+  color: var(--text_color);
+  font-weight: var(--normal_fw);
+}
+
 .below_navbar {
   padding-top: 9rem;
 }
@@ -121,5 +133,9 @@ button {
 @media screen and (max-width: 1024px) {
   .section {
     padding: 10rem 0;
+  }
+
+  .shared_header_title {
+    letter-spacing: -1px;
   }
 }

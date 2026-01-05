@@ -11,12 +11,15 @@ const Technologies = () => {
         <div className="home_tech_contents">
           <div className="home_tech_headers">
             <PreTitle preTitle={"What i am proficient in"} />
-            <h2 className="home_tech_title">Technologies</h2>
+            <h2 className="home_tech_title shared_header_title">
+              Technologies
+            </h2>
           </div>
-          <p className="home_tech_desc">
-            I have extensive experience working with modern web technologies and tools. 
-            From frontend frameworks to cloud services, I leverage the best tools to 
-            build scalable, performant, and user-friendly applications that solve real-world problems.
+          <p className="home_tech_desc shared_header_desc">
+            I have extensive experience working with modern web technologies and
+            tools. From frontend frameworks to cloud services, I leverage the
+            best tools to build scalable, performant, and user-friendly
+            applications that solve real-world problems.
           </p>
         </div>
         <Marquee

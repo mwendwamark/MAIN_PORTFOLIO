@@ -65,7 +65,7 @@ const ContactsForm = () => {
 
   return (
     <section className="contacts_form_section section">
-        {/* <BackgroundShapesRight/> */}
+      {/* <BackgroundShapesRight/> */}
       <ToastContainer
         position="bottom-right"
         autoClose={5000}
@@ -84,8 +84,8 @@ const ContactsForm = () => {
         </div>
         <div className="contacts_form_container_contents">
           <div className="contacts_form_contents_left">
-            <h2>Let's connect</h2>
-            <p>
+            <h2 className="shared_header_title">Let's connect</h2>
+            <p className="shared_header_desc">
               Let’s create something amazing together! Reach out I’d love to
               hear about your project and ideas.
             </p>

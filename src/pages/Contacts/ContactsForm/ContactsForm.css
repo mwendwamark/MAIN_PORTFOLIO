@@ -23,18 +23,7 @@
   gap: 1.5rem;
 }
 
-.contacts_form_contents_left h2 {
-  font-size: var(--section_title_fs);
-  font-weight: var(--semi_bold_fw);
-  letter-spacing: -1px;
-  line-height: 1.2;
-}
-
 .contacts_form_contents_left p {
-  font-size: var(--text_fs);
-  color: var(--text_color);
-  font-weight: var(--normal_fw);
-  line-height: 1.6;
   max-width: 90%;
 }
 
@@ -84,8 +73,8 @@
   width: 100%;
 }
 
-input,
-textarea {
+.contacts_form_container_right input,
+.contacts_form_container_right textarea {
   width: 100%;
   padding: 1rem 1.5rem;
   border-radius: 12px;
@@ -98,20 +87,20 @@ textarea {
   transition: all 0.3s ease;
 }
 
-input::placeholder,
+.contacts_form_container_right input::placeholder,
 textarea::placeholder {
   color: #999;
   font-weight: 400;
 }
 
-input:focus,
-textarea:focus {
+.contacts_form_container_right input:focus,
+.contacts_form_container_right textarea:focus {
   border-color: var(--orange_color);
   background-color: #fff;
   box-shadow: 0 0 0 4px rgba(255, 70, 46, 0.05);
 }
 
-textarea {
+.contacts_form_container_right textarea {
   resize: vertical;
   min-height: 120px;
 }
@@ -158,15 +147,14 @@ textarea {
   .contacts_form_contents_left p {
     max-width: 100%;
   }
+  .contacts_form_container_right {
+    padding: 0;
+    gap: 1rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
   .contacts_form_section {
-    gap: 1rem;
-  }
-
-  .contacts_form_container_right {
-    padding: 1.5rem;
     gap: 1rem;
   }
 

@@ -1,0 +1,268 @@
+/* ==================== FOOTER SECTION ==================== */
+.footer_section {
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+}
+
+/* ==================== FOOTER CONTAINER ==================== */
+.footer_container {
+  border-top: 1px solid var(--light_grey_color);
+  border-bottom: 1px solid var(--light_grey_color);
+}
+
+/* ==================== FOOTER CONTENTS GRID ==================== */
+.footer_contents {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ==================== FOOTER INFO COLUMNS ==================== */
+.footer_contents_info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  border-right: 1px solid var(--light_grey_color);
+}
+
+.footer_contents_info:first-child {
+  padding-left: 0;
+}
+
+.footer_contents_info:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+/* ==================== SECTION HEADERS ==================== */
+.footer_contents_info span {
+  text-transform: uppercase;
+  color: var(--text_color);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+/* ==================== CONTACT LINKS ==================== */
+.footer_contact_details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footer_link {
+  color: var(--black_color);
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer_link:hover {
+  color: var(--orange_color);
+}
+
+/* ==================== LOCATION TEXT ==================== */
+.footer_contents_info div p {
+  color: var(--black_color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ==================== NAVIGATION LINKS ==================== */
+.footer_contents_info ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer_contents_info ul li a {
+  color: var(--black_color);
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.footer_contents_info ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--orange_color);
+  transition: width 0.3s ease;
+}
+
+.footer_contents_info ul li a:hover {
+  color: var(--orange_color);
+}
+
+.footer_contents_info ul li a:hover::after {
+  width: 100%;
+}
+
+/* ==================== SOCIAL ICONS ==================== */
+.footer_socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer_socials a {
+  color: var(--black_color);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--light_grey_color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+}
+
+.footer_socials a:hover {
+  background-color: var(--black_color);
+  color: var(--white_alt_color);
+  border-color: var(--black_color);
+  transform: translateY(-3px);
+}
+
+/* ==================== COPYRIGHT SECTION ==================== */
+.footer_copyright {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.footer_copyright p {
+  color: var(--text_color);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  opacity: 0.6;
+}
+
+/* ====================  MEDIUM SCREENS (TABLET) ==================== */
+@media screen and (max-width: 1024px) {
+  .footer_section {
+    padding-top: 6rem;
+  }
+
+  .footer_contents {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer_contents_info {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .footer_contents_info:first-child {
+    padding-left: 0;
+    border-bottom: 1px solid var(--light_grey_color);
+  }
+
+  .footer_contents_info:nth-child(2) {
+    border-right: none;
+    border-bottom: 1px solid var(--light_grey_color);
+  }
+
+  .footer_contents_info:nth-child(3) {
+    padding-left: 0;
+    border-right: 1px solid var(--light_grey_color);
+  }
+
+  .footer_contents_info:last-child {
+    padding-right: 1.25rem;
+  }
+}
+
+/* ==================== SMALL SCREENS (MOBILE) ==================== */
+@media screen and (max-width: 600px) {
+  .footer_section {
+    padding-top: 4rem;
+  }
+
+  /* Remove container borders on mobile - sections will have full-width borders */
+  .footer_container {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .footer_contents {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .footer_contents_info {
+    border-right: none;
+    border-top: 1px solid var(--light_grey_color);
+    border-bottom: 1px solid var(--light_grey_color);
+
+    /* Break out of container to full viewport width */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+
+    /* Align content back to container width */
+    /* 50vw - 50% is the distance from viewport edge to container edge */
+    /* We add a small buffer (e.g. 5%) to ensure text isn't right on the edge if container is 100% */
+    padding-left: calc(50vw - 50% + 5%);
+    padding-right: calc(50vw - 50% + 5%);
+
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .footer_contents_info:first-child, 
+  .footer_contents_info:nth-child(3) {
+    padding-left: calc(50vw - 50% + 5%);
+  }
+
+  /* Collapse adjacent borders */
+  .footer_contents_info + .footer_contents_info {
+    border-top: none;
+  }
+
+  .footer_contents_info span {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer_link,
+  .footer_contents_info div p,
+  .footer_contents_info ul li a {
+    font-size: 1.1rem;
+  }
+
+  .footer_socials a {
+    width: 42px;
+    height: 42px;
+  }
+
+  .footer_copyright {
+    padding: 1.25rem 0;
+  }
+
+  .footer_copyright p {
+    font-size: 0.8rem;
+  }
+}
+
+/* ==================== EXTRA SMALL SCREENS ==================== */
+@media screen and (max-width: 380px) {
+  .footer_socials {
+    gap: 0.5rem;
+  }
+
+  .footer_socials a {
+    width: 38px;
+    height: 38px;
+  }
+
+  .footer_socials a svg {
+    width: 18px;
+    height: 18px;
+  }
+}

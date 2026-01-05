@@ -1,5 +1,6 @@
 .home_tech_section {
   overflow: hidden;
+  position: relative;
 }
 
 .home_tech_container {
@@ -17,17 +18,7 @@
   gap: 2rem;
 }
 
-.home_tech_headers h2 {
-  font-size: var(--section_title_fs);
-  font-weight: var(--semi_bold_fw);
-  letter-spacing: -2px;
-}
-
 .home_tech_desc {
-  font-size: var(--text_fs);
-  color: var(--text_color);
-  font-weight: var(--normal_fw);
-  line-height: 1.6;
   max-width: 100%;
 }
 
@@ -128,7 +119,7 @@
   }
 
   .home_tech_desc {
-    max-width: 65%;
+    max-width: 75%;
   }
 }
 
