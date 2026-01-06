@@ -6,6 +6,7 @@ import Technologies from "./Technologies/Technologies";
 import ContactsForm from "../Contacts/ContactsForm/ContactsForm";
 import Projects from "./Projects/Projects";
 import Carousel3D from "./Carousel3D/Carousel3D";
+import Testimonial from "./Testimonials/Testimonial";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       {/* <Carousel3D /> */}
       <Projects />
       <Technologies />
+      <Testimonial />
       <ContactsForm />
       <CTA />
     </div>
