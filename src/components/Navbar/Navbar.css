@@ -153,3 +153,15 @@
     font-size: 1rem;
   }
 }
+
+/* Fix for contact button border in scrolled navbar */
+.scroll_navbar .btn_white_outline {
+  border-color: var(--black_color);
+  color: var(--black_color);
+}
+
+.scroll_navbar .btn_white_outline:hover {
+  background-color: var(--black_color);
+  color: #ffffff;
+  border-color: var(--black_color);
+}
