@@ -9,7 +9,7 @@ import Img4 from "../../../assets/GRWC.webp";
 import { NavLink } from "react-router-dom";
 const Projects = () => {
   return (
-    <div className="home_projects_section section">
+    <div className="home_projects_section section" id="projects">
       <div className="home_projects_container container">
         <div className="home_projects_headers">
           <div className="home_projects_headers_left">

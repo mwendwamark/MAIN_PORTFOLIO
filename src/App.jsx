@@ -7,6 +7,7 @@ import BackgroundShapesLeft from "./components/BackgroundShapes/BackgroundShapes
 import BackgroundShapesRight from "./components/BackgroundShapes/BackgroundShapesRight";
 import Home from "./pages/Home/Home";
 import Footer from "./components/Footer/Footer";
+import Contacts from "./pages/Contacts/Contacts";
 
 const App = () => {
   return (
@@ -14,14 +15,12 @@ const App = () => {
       <div
         style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
       >
-        {/* <BackgroundShapesLeft /> */}
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/contacts" element={<Contacts />} />
         </Routes>
         <Footer />
-        {/* <CTA /> */}
-        {/* <BackgroundShapesRight /> */}
       </div>
     </BrowserRouter>
   );

@@ -1,0 +1,120 @@
+/* Home About Section */
+.home_about_section {
+  background-color: var(--bg_color);
+  position: relative;
+}
+
+.home_about_container {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+.home_about_section .background_shapes_container {
+  z-index: 0;
+}
+
+/* Left Side */
+.home_about_left {
+  position: sticky;
+  /* top: 6rem; Stick to top when scrolling if content is long */
+}
+
+.home_about_header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Right Side: Accordion */
+.home_about_accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.home_about_item {
+  border-bottom: 1px solid var(--light_grey_color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home_about_item:first-child {
+  border-top: 1px solid var(--light_grey_color);
+}
+
+.home_about_item_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  transition: color 0.3s ease;
+}
+
+.home_about_item_title {
+  font-size: 1.5rem;
+  font-weight: var(--medium_fw);
+  color: var(--black_color);
+  transition: color 0.3s ease;
+}
+
+.home_about_icon_wrapper {
+  color: var(--black_color);
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Active State Styles */
+.home_about_item.active .home_about_item_title {
+  color: var(--orange_color);
+}
+
+.home_about_item.active .home_about_icon_wrapper {
+  color: var(--orange_color);
+  transform: rotate(180deg);
+}
+
+.home_about_item:hover .home_about_item_title {
+  color: var(--orange_color);
+}
+
+/* Content Expansion */
+.home_about_item_content {
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.home_about_item_content p {
+  padding-bottom: 2rem;
+  color: var(--text_color);
+  line-height: 1.6;
+  font-size: 1rem;
+  max-width: 90%;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  .home_about_container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .home_about_left {
+    position: static;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home_about_item_title {
+    font-size: 1.25rem;
+  }
+
+  .home_about_item_header {
+    padding: 1.5rem 0;
+  }
+}

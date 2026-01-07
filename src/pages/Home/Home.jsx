@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./Hero/Hero";
 import CTA from "../../components/CTA/CTA";
 import Intro from "./Intro/Intro";
+import HomeAbout from "./HomeAbout/HomeAbout";
 import Technologies from "./Technologies/Technologies";
 import ContactsForm from "../Contacts/ContactsForm/ContactsForm";
 import Projects from "./Projects/Projects";
@@ -13,8 +14,8 @@ const Home = () => {
     <div>
       <Hero />
       <Intro />
-      {/* <Carousel3D /> */}
       <Projects />
+      <HomeAbout />
       <Technologies />
       <Testimonial />
       <ContactsForm />

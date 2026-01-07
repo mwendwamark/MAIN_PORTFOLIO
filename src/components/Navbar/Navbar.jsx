@@ -11,7 +11,8 @@ const Navbar = () => {
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
-  const isHome = location.pathname === "/";
+  const isTransparent =
+    location.pathname === "/" || location.pathname === "/contacts";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +54,7 @@ const Navbar = () => {
     <header
       className={`main_navbar ${scrolled ? "scroll_navbar" : ""} ${
         !visible ? "main_navbar_hidden" : ""
-      } ${isHome && !scrolled ? "navbar_overlay" : ""}`}
+      } ${isTransparent && !scrolled ? "navbar_overlay" : ""}`}
     >
       <nav className="container main_navbar_container">
         <div className="main_navbar_logo">
@@ -68,13 +69,13 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li className="main_navbar_link">
-            <NavLink to="/about">About</NavLink>
+            <a href="#about">About</a>
           </li>
           <li className="main_navbar_link">
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contacts">Contact</NavLink>
           </li>
           <li className="main_navbar_link">
-            <NavLink to="/projects">Projects</NavLink>
+            <a href="#projects">Projects</a>
           </li>
           <li className="main_navbar_link">
             <NavLink to="/resume">Resume</NavLink>
@@ -82,7 +83,7 @@ const Navbar = () => {
 
           <li className="main_navbar_link">
             <ButtonWhiteOutline text={"Get in Touch"} to="/contact" />
-          </li> 
+          </li>
         </ul>
 
         <div className="main_navbar_menu-icon" onClick={toggleMenu}>
