@@ -1,7 +1,7 @@
 import React from "react";
 import "./CTA.css";
 import ButtonPri from "../ButtonPri/ButtonPri";
-import img from "../../assets/img.avif";
+import img from "../../assets/me.avif";
 
 const CTA = () => {
   return (
