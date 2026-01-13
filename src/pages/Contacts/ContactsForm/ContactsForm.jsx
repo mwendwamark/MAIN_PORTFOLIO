@@ -94,6 +94,7 @@ const ContactsForm = () => {
                 target="_no-referer"
                 href="https://www.instagram.com/dev_nthei/"
                 className="contact_form_social_icon"
+                aria-label="Instagram Profile"
               >
                 <InstagramLogo size={26} />{" "}
               </a>
@@ -101,6 +102,7 @@ const ContactsForm = () => {
                 target="_no-referer"
                 href="mailto:devnthei@gmail.com"
                 className="contact_form_social_icon"
+                aria-label="Email Me"
               >
                 <Envelope size={26} />{" "}
               </a>
@@ -108,6 +110,7 @@ const ContactsForm = () => {
                 target="_no-referer"
                 href="https://www.linkedin.com/in/markmwendwanthei"
                 className="contact_form_social_icon"
+                aria-label="LinkedIn Profile"
               >
                 <LinkedinLogo size={26} />
               </a>

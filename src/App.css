@@ -1,16 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
 :root {
   --bg_color: #ffffff;
   --white_alt_color: #fafaf9;
   --orange_color: #ff462e;
   --black_color: #1e1e1e;
-  --text_color: #7f7f80;
+  --text_color: #555555;
   --light_grey_color: rgb(238, 238, 238);
 
   /* FONTS */
   /* FONTS - Fluid Typography using clamp(min, preferred, max) */
-  --manrope-font: "Manrope", sans-serif;
+  --manrope-font: "Bricolage Grotesque", sans-serif;
 
   /* 
      Scale:

@@ -41,7 +41,8 @@
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   font-weight: 500;
-  opacity: 0.7;
+  font-weight: 500;
+  /* opacity: 0.7; */
 }
 
 /* ==================== CONTACT LINKS ==================== */
@@ -140,7 +141,8 @@
   color: var(--text_color);
   font-size: 0.85rem;
   letter-spacing: 0.02em;
-  opacity: 0.6;
+  letter-spacing: 0.02em;
+  /* opacity: 0.6; */
 }
 
 /* ====================  MEDIUM SCREENS (TABLET) ==================== */
@@ -216,7 +218,7 @@
     padding-bottom: 1.5rem;
   }
 
-  .footer_contents_info:first-child, 
+  .footer_contents_info:first-child,
   .footer_contents_info:nth-child(3) {
     padding-left: calc(50vw - 50% + 5%);
   }
