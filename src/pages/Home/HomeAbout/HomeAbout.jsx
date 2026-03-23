@@ -3,7 +3,7 @@ import "./HomeAbout.css";
 import PreTitle from "../../../components/PreTitle/PreTitle";
 import { Plus, Minus } from "@phosphor-icons/react";
 import BackgroundShapesLeft from "../../../components/BackgroundShapes/BackgroundShapesLeft";
-
+import ButtonOrange from "../../../components/ButtonOrange/ButtonOrange";
 const aboutData = [
   {
     id: 1,
@@ -49,6 +49,7 @@ const HomeAbout = () => {
             <h2 className="home_about_title shared_header_title">
               Behind the screen
             </h2>
+            <ButtonOrange to="/about_me" text={"More about me"} />
           </div>
         </div>
 

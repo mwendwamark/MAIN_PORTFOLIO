@@ -12,6 +12,7 @@
   background-color: var(--orange_color);
   cursor: pointer;
   border-radius: 500px;
+  max-width: fit-content;
 }
 
 .btn_orange::before {

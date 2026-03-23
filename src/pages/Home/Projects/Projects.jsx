@@ -6,7 +6,10 @@ import Img1 from "../../../assets/KejaConnect.webp";
 import Img2 from "../../../assets/KilimoLink.webp";
 import Img3 from "../../../assets/LiquorChapChap.webp";
 import Img4 from "../../../assets/GRWC.webp";
+import Img5 from "../../../assets/DentalWebsite.webp";
 import { NavLink } from "react-router-dom";
+import ButtonOrangeOutline from "../../../components/ButtonOrangeOutline/ButtonOrangeOutline";
+
 const Projects = () => {
   return (
     <div className="home_projects_section section" id="projects">
@@ -28,7 +31,7 @@ const Projects = () => {
         </div>
 
         <div className="home_projects_showcase">
-          <NavLink to="" className="home_project_content">
+          <NavLink to="/projects/keja_connect" className="home_project_content">
             <div className="home_project_content_left">
               <div className="home_project_content_left_upper">
                 <strong>WEB DEVELOPMENT</strong>
@@ -49,7 +52,7 @@ const Projects = () => {
               <img src={Img1} alt="" width="100%" height="500" />
             </div>
           </NavLink>
-          <NavLink to="" className="home_project_content">
+          <NavLink to="/projects/kilimo_link" className="home_project_content">
             <div className="home_project_content_left">
               <div className="home_project_content_left_upper">
                 <strong>AGRICULTURE PLATFORM</strong>
@@ -58,7 +61,7 @@ const Projects = () => {
               <div className="home_project_content_left_lower">
                 <div className="home_project_duration">
                   <span>Duration</span>
-                  <p>2 months</p>
+                  <p>4 months</p>
                 </div>
                 <div className="home_projects_right_arrow_icon">
                   <ArrowUpRight size={30} />
@@ -70,7 +73,10 @@ const Projects = () => {
               <img src={Img2} alt="" width="100%" height="500" />
             </div>
           </NavLink>
-          <NavLink to="" className="home_project_content">
+          <NavLink
+            to="/projects/liquor_chapchap"
+            className="home_project_content"
+          >
             <div className="home_project_content_left">
               <div className="home_project_content_left_upper">
                 <strong>E-COMMERCE</strong>
@@ -79,7 +85,7 @@ const Projects = () => {
               <div className="home_project_content_left_lower">
                 <div className="home_project_duration">
                   <span>Duration</span>
-                  <p>2 months</p>
+                  <p>3 months</p>
                 </div>
                 <div className="home_projects_right_arrow_icon">
                   <ArrowUpRight size={30} />
@@ -91,7 +97,7 @@ const Projects = () => {
               <img src={Img3} alt="" width="100%" height="500" />
             </div>
           </NavLink>
-          <NavLink to="" className="home_project_content">
+          <NavLink to="/projects/grwc" className="home_project_content">
             <div className="home_project_content_left">
               <div className="home_project_content_left_upper">
                 <strong>WEB DESIGN & CMS</strong>
@@ -111,6 +117,31 @@ const Projects = () => {
               <img src={Img4} alt="" width="100%" height="500" />
             </div>
           </NavLink>
+
+          <NavLink to="/projects/360_dental" className="home_project_content">
+            <div className="home_project_content_left">
+              <div className="home_project_content_left_upper">
+                <strong>WEB DESIGN & WEB DEVELOPMENT </strong>
+                <h3>Dental Website</h3>
+              </div>
+              <div className="home_project_content_left_lower">
+                <div className="home_project_duration">
+                  <span>Duration</span>
+                  <p>1 month</p>
+                </div>
+                <div className="home_projects_right_arrow_icon">
+                  <ArrowUpRight size={30} />
+                </div>
+              </div>
+            </div>
+            <div className="home_project_content_right">
+              <img src={Img5} alt="" width="100%" height="500" />
+            </div>
+          </NavLink>
+        </div>
+
+        <div className="home_projects_below_button">
+          <ButtonOrangeOutline text={"View All Projects"} to={"/"} />
         </div>
       </div>
     </div>

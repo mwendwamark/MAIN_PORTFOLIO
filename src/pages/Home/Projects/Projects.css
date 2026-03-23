@@ -155,6 +155,12 @@
   transform: scale(1.05);
 }
 
+.home_projects_below_button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Responsive Adjustments */
 @media screen and (min-width: 768px) {
   .home_projects_headers {

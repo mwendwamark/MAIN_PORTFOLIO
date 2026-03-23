@@ -12,7 +12,7 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
   const isTransparent =
-    location.pathname === "/" || location.pathname === "/contacts";
+    location.pathname === "/" || location.pathname.startsWith("/contact") || location.pathname.startsWith("/projects");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,13 +69,13 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li className="main_navbar_link">
-            <a href="#about">About</a>
+            <a href="/about_me">About</a>
           </li>
           <li className="main_navbar_link">
-            <NavLink to="/contacts">Contact</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
           <li className="main_navbar_link">
-            <a href="#projects">Projects</a>
+            <a href="/projects">Projects</a>
           </li>
           <li className="main_navbar_link">
             <NavLink to="/resume">Resume</NavLink>
