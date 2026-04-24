@@ -84,7 +84,7 @@ const Footer = () => {
                 <TiktokLogo size={22} weight="regular" />
               </a>
               <a
-                href="https://github.com/devnthei"
+                href="http://github.com/mwendwamark"
                 aria-label="GitHub Profile"
                 target="_blank"
                 rel="noopener noreferrer"

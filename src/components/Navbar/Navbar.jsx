@@ -78,7 +78,7 @@ const Navbar = () => {
             <a href="/projects">Projects</a>
           </li>
           <li className="main_navbar_link">
-            <NavLink to="/resume">Resume</NavLink>
+            <a href="https://docs.google.com/document/d/15r3Ov2l1F3r7t169PkT-VsNivY6Olk1Bl5dOHfM-6Q0/edit?usp=sharing" target="_blank">Resume</a>
           </li>
 
           <li className="main_navbar_link">
