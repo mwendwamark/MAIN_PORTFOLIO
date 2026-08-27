@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./ProjectDetail.css";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowUpRight, ArrowLeft, ArrowRight } from "@phosphor-icons/react";
 import ButtonOrangeOutline from "../ButtonOrangeOutline/ButtonOrangeOutline";
 import { projectsData } from "../../data/projectsData";
 import bgImage from "../../assets/ProjectsBG.webp";
@@ -68,6 +68,18 @@ const ProjectDetail = ({ project, sections }) => {
   };
 
   const otherProjects = projectsData.filter((p) => p.slug !== project.slug);
+  const carouselRef = useRef(null);
+
+  const scrollCarousel = (direction) => {
+    if (!carouselRef.current) return;
+    const slide = carouselRef.current.querySelector(".pd_slide");
+    if (!slide) return;
+    const scrollAmount = slide.offsetWidth + 20;
+    carouselRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="pd_page_wrapper">
@@ -209,21 +221,53 @@ const ProjectDetail = ({ project, sections }) => {
       <section className="pd_more_section fade_in_section">
         <div className="pd_more_header">
           <h2 className="pd_more_title">Check out my other works</h2>
-          <ButtonOrangeOutline text="More Projects" to="/projects" />
+          <div className="pd_more_nav">
+            <button
+              type="button"
+              className="pd_more_nav_btn"
+              onClick={() => scrollCarousel("left")}
+              aria-label="Previous project"
+            >
+              <ArrowLeft size={18} />
+            </button>
+            <button
+              type="button"
+              className="pd_more_nav_btn"
+              onClick={() => scrollCarousel("right")}
+              aria-label="Next project"
+            >
+              <ArrowRight size={18} />
+            </button>
+            <ButtonOrangeOutline text="More Projects" to="/projects" />
+          </div>
         </div>
 
-        <div className="pd_carousel">
-          {otherProjects.map((p) => (
-            <NavLink to={p.route} key={p.slug} className="pd_card">
-              <div className="pd_card_img_wrapper">
-                <img src={p.heroImage} alt={p.title} className="pd_card_img" loading="lazy" />
+        <div className="pd_carousel" ref={carouselRef}>
+          {otherProjects.map((p, index) => (
+            <div className="pd_slide" key={p.slug}>
+              <div className="pd_slide_info">
+                <div className="pd_slide_info_top">
+                  <span className="pd_slide_index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="pd_slide_category">{p.category}</span>
+                </div>
+                <h3 className="pd_slide_title">{p.title}</h3>
+                <p className="pd_slide_desc">{p.tagline}</p>
+                <NavLink to={p.route} className="pd_slide_link">
+                  View Case Study
+                  <ArrowUpRight size={16} weight="bold" />
+                </NavLink>
               </div>
-              <div className="pd_card_info">
-                <span className="pd_card_category">{p.category}</span>
-                <h4 className="pd_card_name">{p.title}</h4>
-                <span className="pd_card_duration">{p.duration}</span>
-              </div>
-            </NavLink>
+              <NavLink to={p.route} className="pd_slide_image_card">
+                <img
+                  src={p.heroImage}
+                  alt={p.title}
+                  className="pd_slide_image"
+                  loading="lazy"
+                />
+              </NavLink>
+            </div>
           ))}
         </div>
       </section>

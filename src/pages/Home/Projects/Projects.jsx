@@ -141,7 +141,7 @@ const Projects = () => {
         </div>
 
         <div className="home_projects_below_button">
-          <ButtonOrangeOutline text={"View All Projects"} to={"/"} />
+          <ButtonOrangeOutline text={"View All Projects"} to={"/projects"} />
         </div>
       </div>
     </div>

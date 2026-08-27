@@ -69,13 +69,13 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li className="main_navbar_link">
-            <a href="/about_me">About</a>
+            <a href="#about_me">About</a>
           </li>
           <li className="main_navbar_link">
             <NavLink to="/contact">Contact</NavLink>
           </li>
           <li className="main_navbar_link">
-            <a href="/projects">Projects</a>
+            <NavLink to="/projects">Projects</NavLink>
           </li>
           <li className="main_navbar_link">
             <a href="https://docs.google.com/document/d/15r3Ov2l1F3r7t169PkT-VsNivY6Olk1Bl5dOHfM-6Q0/edit?usp=sharing" target="_blank">Resume</a>

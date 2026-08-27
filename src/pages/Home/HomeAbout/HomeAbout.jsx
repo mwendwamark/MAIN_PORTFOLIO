@@ -39,7 +39,7 @@ const HomeAbout = () => {
   };
 
   return (
-    <section className="home_about_section section" id="about">
+    <section className="home_about_section section" id="about_me">
       <BackgroundShapesLeft/>
       <div className="home_about_container container">
         {/* Left Side: Header */}
