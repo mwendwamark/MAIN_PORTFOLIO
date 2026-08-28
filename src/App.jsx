@@ -20,6 +20,7 @@ import Uga from "./pages/Projects/Uga/Uga";
 import TurfsKe from "./pages/Projects/TurfsKe/TurfsKe";
 import UmbaLabs from "./pages/Projects/UmbaLabs/UmbaLabs";
 import Primax from "./pages/Projects/Primax/Primax";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
       <div
         style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
       >
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
